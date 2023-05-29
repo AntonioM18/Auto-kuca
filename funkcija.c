@@ -20,17 +20,16 @@ void traziVozilo(Automobil automobili[], int brojAutomobila, char trazenaMarka[]
     }
 }
 
-void filter(Automobil automobili[], int brojAutomobila, int maksimalnaKilometraza, int maksimalnaCijena) {
+void filter(Automobil automobili[], int brojAutomobila, int opcija, int vrijednost) {
     printf("Filtrirani rezultati:\n");
     for (int i = 0; i < brojAutomobila; i++) {
-        if (automobili[i].kilometraza <= maksimalnaKilometraza && automobili[i].cijena <= maksimalnaCijena) {
-            printf("%s - Stanje: %d, Cijena: %d EUR, Kilometraza: %d km, Boja: %s, Snaga motora: %d KS, Vrsta goriva: %s\n",
-                automobili[i].marka, automobili[i].stanje, automobili[i].cijena, automobili[i].kilometraza, automobili[i].boja,
-                automobili[i].snagaMotora, automobili[i].vrstaGoriva);
+        if (opcija == 1 && automobili[i].cijena <= vrijednost) {
+            printf("%s - Stanje: %d, Cijena: %d EUR, Kilometraza: %d km, Boja: %s\n",
+                automobili[i].marka, automobili[i].stanje, automobili[i].cijena, automobili[i].kilometraza, automobili[i].boja);
+        }
+        else if (opcija == 2 && automobili[i].kilometraza <= vrijednost) {
+            printf("%s - Stanje: %d, Cijena: %d EUR, Kilometraza: %d km, Boja: %s\n",
+                automobili[i].marka, automobili[i].stanje, automobili[i].cijena, automobili[i].kilometraza, automobili[i].boja);
         }
     }
 }
-
-
-
-
