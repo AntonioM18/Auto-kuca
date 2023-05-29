@@ -1,10 +1,10 @@
-#pragma once
 #ifndef FUNKCIJA_H
 #define FUNKCIJA_H
 
-#include <stdio.h>
 #include "header.h"
 
-void printCarBrands(Automobil automobili[], int numAutomobili);
+void listaAutomobila(Automobil automobili[], int brojAutomobila);
+void traziVozilo(Automobil automobili[], int brojAutomobila, char trazenaMarka[]);
+void filter(Automobil automobili[], int brojAutomobila, int maksimalnaKilometraza, int maksimalnaCijena);
 
 #endif

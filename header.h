@@ -7,6 +7,22 @@
 typedef struct {
     char marka[50];
     int stanje;
+    int cijena;
+    int kilometraza;
+    char boja[20];
+    int snagaMotora;
+    char vrstaGoriva[20];
 } Automobil;
 
-#endif
+void listaAutomobila(Automobil automobili[], int brojAutomobila);
+void traziVozilo(Automobil automobili[], int brojAutomobila, char trazenaMarka[]);
+void filter(Automobil automobili[], int brojAutomobila, int maksimalnaKilometraza, int maksimalnaCijena);
+
+#endif  // HEADER_H
+
+
+
+
+
+
+
