@@ -1,15 +1,14 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
-
 #include <stdio.h>
 #include <string.h>
 #include "header.h"
 
 
 //1
-int main() {
+ static int main() {
 	printf("Dobro dosli!\n");
 
-	Automobil automobili[MAX_AUTOMOBILI];
+	static Automobil automobili[MAX_AUTOMOBILI];
 	//inicijalizacija automobila
 	strcpy(automobili[0].marka, "Abarth");
 	automobili[0].stanje = 16;
@@ -448,26 +447,36 @@ int main() {
 		case 1:
 			listaAutomobila(automobili, brojAutomobila);
 			break;
-		case 2: {
+		case 2:
+		{
 			char trazenaMarka[50];
 			printf("Unesite ime vozila: ");
 			scanf("%s", trazenaMarka);
 			traziVozilo(automobili, brojAutomobila, trazenaMarka);
-			break;
+			printf("Unesite ime automobila koji zelite kupiti (0 za odustajanje): ");
+			char kupnjaMarka[50];
+			scanf("%s", kupnjaMarka);
+			if (strcmp(kupnjaMarka, "0") != 0) {
+				kupiAutomobil(automobili, brojAutomobila, kupnjaMarka);
+			}
 		}
-		case 3: {
-			int opcija;
-			int vrijednost;
-			printf("Odaberite opciju:\n");
-			printf("1. Cijena\n");
-			printf("2. Kilometraza\n");
-			printf("Unesite opciju: ");
+		break;
+		case 3:
+		{
+			int opcija, vrijednost;
+			printf("Odaberite opciju (1-Cijena, 2-Kilometraza): ");
 			scanf("%d", &opcija);
 			printf("Unesite vrijednost: ");
 			scanf("%d", &vrijednost);
 			filter(automobili, brojAutomobila, opcija, vrijednost);
-			break;
+			printf("Unesite ime automobila koji zelite kupiti (0 za odustajanje): ");
+			char kupnjaMarka[50];
+			scanf("%s", kupnjaMarka);
+			if (strcmp(kupnjaMarka, "0") != 0) {
+				kupiAutomobil(automobili, brojAutomobila, kupnjaMarka);
+			}
 		}
+		break;
 		case 0:
 			printf("Hvala na koristenju programa!\n");
 			break;
@@ -479,3 +488,11 @@ int main() {
 
 	return 0;
 }
+
+
+
+
+
+
+
+
