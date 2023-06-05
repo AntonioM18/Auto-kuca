@@ -1,6 +1,6 @@
-#pragma once
-#ifndef HEADER_H
-#define HEADER_H
+﻿#pragma once
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 
@@ -9,4 +9,5 @@ void traziAutomobil();
 void prikaziListuMotocikala();
 void traziMotocikl();
 
-#endif // HEADER_H
+#endif // MAIN_H
+

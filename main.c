@@ -1,497 +1,88 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <string.h>
+#include "main.h"
 #include "header.h"
 
+int main() {
+    int opcija;
 
-//1
- static int main() {
-	printf("Dobro dosli!\n");
+    printf("Dobro došli!\n");
 
-	static Automobil automobili[MAX_AUTOMOBILI];
-	//inicijalizacija automobila
-	strcpy(automobili[0].marka, "Abarth");
-	automobili[0].stanje = 16;
-	automobili[0].cijena = 26990;
-	automobili[0].kilometraza = 64900;
-	strcpy(automobili[0].boja, "Crna");
-	automobili[0].snagaMotora = 179;
-	strcpy(automobili[0].vrstaGoriva, "Benzin");
-	strcpy(automobili[1].marka, "Alfa Romeo");
-	automobili[1].stanje = 24;
-	automobili[1].cijena = 39099;
-	automobili[1].kilometraza = 80000;
-	strcpy(automobili[1].boja, "Plava");
-	automobili[1].snagaMotora = 131;
-	strcpy(automobili[1].vrstaGoriva, "Hybrid");
-	strcpy(automobili[2].marka, "Aston Martin");
-	automobili[2].stanje = 6;
-	automobili[2].cijena = 132000;
-	automobili[2].kilometraza = 50907;
-	strcpy(automobili[2].boja, "Zelena");
-	automobili[2].snagaMotora = 510;
-	strcpy(automobili[2].vrstaGoriva, "Benzin");
-	strcpy(automobili[3].marka, "Audi");
-	automobili[3].stanje = 22;
-	automobili[3].cijena = 132750;
-	automobili[3].kilometraza = 44824;
-	strcpy(automobili[3].boja, "Matt plava");
-	automobili[3].snagaMotora = 600;
-	strcpy(automobili[3].vrstaGoriva, "Benzin");
-	strcpy(automobili[4].marka, "Bentley");
-	automobili[4].stanje = 5;
-	automobili[4].cijena = 349900;
-	automobili[4].kilometraza = 2780;
-	strcpy(automobili[4].boja, "Crna");
-	automobili[4].snagaMotora = 659;
-	strcpy(automobili[4].vrstaGoriva, "Benzin");
-	strcpy(automobili[5].marka, "BMW");
-	automobili[5].stanje = 29;
-	automobili[5].cijena = 214990;
-	automobili[5].kilometraza = 5000;
-	strcpy(automobili[5].boja, "Zlatna");
-	automobili[5].snagaMotora = 571;
-	strcpy(automobili[5].vrstaGoriva, "Hybrid");
-	strcpy(automobili[6].marka, "Bugatti");
-	automobili[6].stanje = 2;
-	automobili[6].cijena = 3790000;
-	automobili[6].kilometraza = 6300;
-	strcpy(automobili[6].boja, "Crna");
-	automobili[6].snagaMotora = 1500;
-	strcpy(automobili[6].vrstaGoriva, "Benzin");
-	strcpy(automobili[7].marka, "Cadillac");
-	automobili[7].stanje = 12;
-	automobili[7].cijena = 68000;
-	automobili[7].kilometraza = 61305;
-	strcpy(automobili[7].boja, "Bijela");
-	automobili[7].snagaMotora = 426;
-	strcpy(automobili[7].vrstaGoriva, "Benzin");
-	strcpy(automobili[8].marka, "Chevrolet");
-	automobili[8].stanje = 20;
-	automobili[8].cijena = 21300;
-	automobili[8].kilometraza = 81100;
-	strcpy(automobili[8].boja, "Crvena");
-	automobili[8].snagaMotora = 328;
-	strcpy(automobili[8].vrstaGoriva, "Benzin");
-	strcpy(automobili[9].marka, "Chrysler");
-	automobili[9].stanje = 10;
-	automobili[9].cijena = 44989;
-	automobili[9].kilometraza = 76000;
-	strcpy(automobili[9].boja, "Siva");
-	automobili[9].snagaMotora = 291;
-	strcpy(automobili[9].vrstaGoriva, "Benzin");
-	strcpy(automobili[10].marka, "Citroen");
-	automobili[10].stanje = 32;
-	automobili[10].cijena = 55950;
-	automobili[10].kilometraza = 76500;
-	strcpy(automobili[10].boja, "Smeda");
-	automobili[10].snagaMotora = 177;
-	strcpy(automobili[10].vrstaGoriva, "Diesel");
-	strcpy(automobili[11].marka, "Corvette");
-	automobili[11].stanje = 4;
-	automobili[11].cijena = 79670;
-	automobili[11].kilometraza = 130759;
-	strcpy(automobili[11].boja, "Zuta");
-	automobili[11].snagaMotora = 241;
-	strcpy(automobili[11].vrstaGoriva, "Benzin");
-	strcpy(automobili[12].marka, "Cupra");
-	automobili[12].stanje = 15;
-	automobili[12].cijena = 48550;
-	automobili[12].kilometraza = 3500;
-	strcpy(automobili[12].boja, "Bijela");
-	automobili[12].snagaMotora = 300;
-	strcpy(automobili[12].vrstaGoriva, "Benzin");
-	strcpy(automobili[13].marka, "Dacia");
-	automobili[13].stanje = 31;
-	automobili[13].cijena = 16449;
-	automobili[13].kilometraza = 30997;
-	strcpy(automobili[13].boja, "Smeda");
-	automobili[13].snagaMotora = 150;
-	strcpy(automobili[13].vrstaGoriva, "Benzin");
-	strcpy(automobili[14].marka, "Dodge");
-	automobili[14].stanje = 11;
-	automobili[14].cijena = 102495;
-	automobili[14].kilometraza = 500;
-	strcpy(automobili[14].boja, "Crna");
-	automobili[14].snagaMotora = 727;
-	strcpy(automobili[14].vrstaGoriva, "Benzin");
-	strcpy(automobili[15].marka, "DS Automobiles");
-	automobili[15].stanje = 2;
-	automobili[15].cijena = 66990;
-	automobili[15].kilometraza = 103530;
-	strcpy(automobili[15].boja, "Siva");
-	automobili[15].snagaMotora = 249;
-	strcpy(automobili[15].vrstaGoriva, "Hybrid");
-	strcpy(automobili[16].marka, "Ferrari");
-	automobili[16].stanje = 9;
-	automobili[16].cijena = 274950;
-	automobili[16].kilometraza = 1000;
-	strcpy(automobili[16].boja, "Zuta");
-	automobili[16].snagaMotora = 619;
-	strcpy(automobili[16].vrstaGoriva, "Benzin");
-	strcpy(automobili[17].marka, "Fiat");
-	automobili[17].stanje = 19;
-	automobili[17].cijena = 29990;
-	automobili[17].kilometraza = 99;
-	strcpy(automobili[17].boja, "Siva");
-	automobili[17].snagaMotora = 118;
-	strcpy(automobili[17].vrstaGoriva, "Struja");
-	strcpy(automobili[18].marka, "Ford");
-	automobili[18].stanje = 35;
-	automobili[18].cijena = 27450;
-	automobili[18].kilometraza = 11029;
-	strcpy(automobili[18].boja, "Crna");
-	automobili[18].snagaMotora = 150;
-	strcpy(automobili[18].vrstaGoriva, "Benzin");
-	strcpy(automobili[19].marka, "GMC");
-	automobili[19].stanje = 4;
-	automobili[19].cijena = 34999;
-	automobili[19].kilometraza = 40000;
-	strcpy(automobili[19].boja, "Siva");
-	automobili[19].snagaMotora = 360;
-	strcpy(automobili[19].vrstaGoriva, "Benzin");
-	strcpy(automobili[20].marka, "Honda");
-	automobili[20].stanje = 18;
-	automobili[20].cijena = 33590;
-	automobili[20].kilometraza = 90;
-	strcpy(automobili[20].boja, "Ljubicasta");
-	automobili[20].snagaMotora = 131;
-	strcpy(automobili[20].vrstaGoriva, "Hybrid");
-	strcpy(automobili[21].marka, "Hummer");
-	automobili[21].stanje = 5;
-	automobili[21].cijena = 38850;
-	automobili[21].kilometraza = 138000;
-	strcpy(automobili[21].boja, "Siva");
-	automobili[21].snagaMotora = 325;
-	strcpy(automobili[21].vrstaGoriva, "Plin");
-	strcpy(automobili[22].marka, "Hyundai");
-	automobili[22].stanje = 28;
-	automobili[22].cijena = 11900;
-	automobili[22].kilometraza = 31112;
-	strcpy(automobili[22].boja, "Narancasta");
-	automobili[22].snagaMotora = 100;
-	strcpy(automobili[22].vrstaGoriva, "Benzin");
-	strcpy(automobili[23].marka, "Infiniti");
-	automobili[23].stanje = 7;
-	automobili[23].cijena = 16480;
-	automobili[23].kilometraza = 35422;
-	strcpy(automobili[23].boja, "Bijela");
-	automobili[23].snagaMotora = 109;
-	strcpy(automobili[23].vrstaGoriva, "Diesel");
-	strcpy(automobili[24].marka, "Isuzu");
-	automobili[24].stanje = 5;
-	automobili[24].cijena = 93118;
-	automobili[24].kilometraza = 130;
-	strcpy(automobili[24].boja, "Zelena");
-	automobili[24].snagaMotora = 163;
-	strcpy(automobili[24].vrstaGoriva, "Diesel");
-	strcpy(automobili[25].marka, "Jaguar");
-	automobili[25].stanje = 11;
-	automobili[25].cijena = 43990;
-	automobili[25].kilometraza = 82000;
-	strcpy(automobili[25].boja, "Bijela");
-	automobili[25].snagaMotora = 400;
-	strcpy(automobili[25].vrstaGoriva, "Struja");
-	strcpy(automobili[26].marka, "Jeep");
-	automobili[26].stanje = 14;
-	automobili[26].cijena = 21490;
-	automobili[26].kilometraza = 162762;
-	strcpy(automobili[26].boja, "Crna");
-	automobili[26].snagaMotora = 250;
-	strcpy(automobili[26].vrstaGoriva, "Diesel");
-	strcpy(automobili[27].marka, "Kia");
-	automobili[27].stanje = 33;
-	automobili[27].cijena = 30988;
-	automobili[27].kilometraza = 100;
-	strcpy(automobili[27].boja, "Crna");
-	automobili[27].snagaMotora = 141;
-	strcpy(automobili[27].vrstaGoriva, "Hybrid");
-	strcpy(automobili[28].marka, "Koenigsegg");
-	automobili[28].stanje = 4;
-	automobili[28].cijena = 4284000;
-	automobili[28].kilometraza = 25;
-	strcpy(automobili[28].boja, "Srebrena");
-	automobili[28].snagaMotora = 1600;
-	strcpy(automobili[28].vrstaGoriva, "Benzin");
-	strcpy(automobili[29].marka, "Lada");
-	automobili[29].stanje = 10;
-	automobili[29].cijena = 30150;
-	automobili[29].kilometraza = 15;
-	strcpy(automobili[29].boja, "Siva");
-	automobili[29].snagaMotora = 83;
-	strcpy(automobili[29].vrstaGoriva, "Benzin");
-	strcpy(automobili[30].marka, "Lamborghini");
-	automobili[30].stanje = 8;
-	automobili[30].cijena = 848000;
-	automobili[30].kilometraza = 490;
-	strcpy(automobili[30].boja, "Zuta");
-	automobili[30].snagaMotora = 760;
-	strcpy(automobili[30].vrstaGoriva, "Benzin");
-	strcpy(automobili[31].marka, "Lancia");
-	automobili[31].stanje = 12;
-	automobili[31].cijena = 69000;
-	automobili[31].kilometraza = 16068;
-	strcpy(automobili[31].boja, "Crvena");
-	automobili[31].snagaMotora = 205;
-	strcpy(automobili[31].vrstaGoriva, "Benzin");
-	strcpy(automobili[32].marka, "Land Rover");
-	automobili[32].stanje = 22;
-	automobili[32].cijena = 40900;
-	automobili[32].kilometraza = 40700;
-	strcpy(automobili[32].boja, "Crna");
-	automobili[32].snagaMotora = 179;
-	strcpy(automobili[32].vrstaGoriva, "Benzin");
-	strcpy(automobili[33].marka, "Lexus");
-	automobili[33].stanje = 8;
-	automobili[33].cijena = 28490;
-	automobili[33].kilometraza = 34910;
-	strcpy(automobili[33].boja, "Siva");
-	automobili[33].snagaMotora = 184;
-	strcpy(automobili[33].vrstaGoriva, "Hybrid");
-	strcpy(automobili[34].marka, "Lotus");
-	automobili[34].stanje = 10;
-	automobili[34].cijena = 108900;
-	automobili[34].kilometraza = 1260;
-	strcpy(automobili[34].boja, "Siva");
-	automobili[34].snagaMotora = 351;
-	strcpy(automobili[34].vrstaGoriva, "Benzin");
-	strcpy(automobili[35].marka, "Maserati");
-	automobili[35].stanje = 12;
-	automobili[35].cijena = 84900;
-	automobili[35].kilometraza = 22000;
-	strcpy(automobili[35].boja, "Ljubicasta");
-	automobili[35].snagaMotora = 460;
-	strcpy(automobili[35].vrstaGoriva, "Benzin");
-	strcpy(automobili[36].marka, "Maybach");
-	automobili[36].stanje = 3;
-	automobili[36].cijena = 389890;
-	automobili[36].kilometraza = 1279;
-	strcpy(automobili[36].boja, "Bijela");
-	automobili[36].snagaMotora = 530;
-	strcpy(automobili[36].vrstaGoriva, "Benzin");
-	strcpy(automobili[37].marka, "Mazda");
-	automobili[37].stanje = 43;
-	automobili[37].cijena = 57930;
-	automobili[37].kilometraza = 3902;
-	strcpy(automobili[37].boja, "Siva");
-	automobili[37].snagaMotora = 328;
-	strcpy(automobili[37].vrstaGoriva, "Hybrid");
-	strcpy(automobili[38].marka, "McLaren");
-	automobili[38].stanje = 7;
-	automobili[38].cijena = 269600;
-	automobili[38].kilometraza = 9200;
-	strcpy(automobili[38].boja, "Crna");
-	automobili[38].snagaMotora = 708;
-	strcpy(automobili[38].vrstaGoriva, "Benzin");
-	strcpy(automobili[39].marka, "Mercedes");
-	automobili[39].stanje = 50;
-	automobili[39].cijena = 195810;
-	automobili[39].kilometraza = 6000;
-	strcpy(automobili[39].boja, "Zuta");
-	automobili[39].snagaMotora = 843;
-	strcpy(automobili[39].vrstaGoriva, "Benzin");
-	strcpy(automobili[40].marka, "MINI");
-	automobili[40].stanje = 23;
-	automobili[40].cijena = 38330;
-	automobili[40].kilometraza = 0;
-	strcpy(automobili[40].boja, "Siva");
-	automobili[40].snagaMotora = 178;
-	strcpy(automobili[40].vrstaGoriva, "Benzin");
-	strcpy(automobili[41].marka, "Mitsubishi");
-	automobili[41].stanje = 15;
-	automobili[41].cijena = 21490;
-	automobili[41].kilometraza = 44467;
-	strcpy(automobili[41].boja, "Bijela");
-	automobili[41].snagaMotora = 150;
-	strcpy(automobili[41].vrstaGoriva, "Benzin");
-	strcpy(automobili[42].marka, "Nissan");
-	automobili[42].stanje = 17;
-	automobili[42].cijena = 22980;
-	automobili[42].kilometraza = 153857;
-	strcpy(automobili[42].boja, "Crna");
-	automobili[42].snagaMotora = 68;
-	strcpy(automobili[42].vrstaGoriva, "Benzin");
-	strcpy(automobili[43].marka, "Opel");
-	automobili[43].stanje = 46;
-	automobili[43].cijena = 20980;
-	automobili[43].kilometraza = 6500;
-	strcpy(automobili[43].boja, "Narancasta");
-	automobili[43].snagaMotora = 101;
-	strcpy(automobili[43].vrstaGoriva, "Benzin");
-	strcpy(automobili[44].marka, "Pagani");
-	automobili[44].stanje = 2;
-	automobili[44].cijena = 3990000;
-	automobili[44].kilometraza = 380;
-	strcpy(automobili[44].boja, "Crna/carbon");
-	automobili[44].snagaMotora = 763;
-	strcpy(automobili[44].vrstaGoriva, "Benzin");
-	strcpy(automobili[45].marka, "Peugeot");
-	automobili[45].stanje = 36;
-	automobili[45].cijena = 31690;
-	automobili[45].kilometraza = 15236;
-	strcpy(automobili[45].boja, "Crvena");
-	automobili[45].snagaMotora = 131;
-	strcpy(automobili[45].vrstaGoriva, "Diezel");
-	strcpy(automobili[46].marka, "Porsche");
-	automobili[46].stanje = 17;
-	automobili[46].cijena = 124990;
-	automobili[46].kilometraza = 58500;
-	strcpy(automobili[46].boja, "Plava");
-	automobili[46].snagaMotora = 450;
-	strcpy(automobili[46].vrstaGoriva, "Benzin");
-	strcpy(automobili[47].marka, "Renault");
-	automobili[47].stanje = 26;
-	automobili[47].cijena = 25990;
-	automobili[47].kilometraza = 80000;
-	strcpy(automobili[47].boja, "Plava");
-	automobili[47].snagaMotora = 91;
-	strcpy(automobili[47].vrstaGoriva, "Hybrid");
-	strcpy(automobili[48].marka, "Rolls-Royce");
-	automobili[48].stanje = 1;
-	automobili[48].cijena = 495000;
-	automobili[48].kilometraza = 5798;
-	strcpy(automobili[48].boja, "Bijela");
-	automobili[48].snagaMotora = 571;
-	strcpy(automobili[48].vrstaGoriva, "Benzin");
-	strcpy(automobili[49].marka, "Seat");
-	automobili[49].stanje = 36;
-	automobili[49].cijena = 23394;
-	automobili[49].kilometraza = 83045;
-	strcpy(automobili[49].boja, "Siva");
-	automobili[49].snagaMotora = 190;
-	strcpy(automobili[49].vrstaGoriva, "Benzin");
-	strcpy(automobili[50].marka, "Skoda");
-	automobili[50].stanje = 38;
-	automobili[50].cijena = 28790;
-	automobili[50].kilometraza = 2450;
-	strcpy(automobili[50].boja, "Crna");
-	automobili[50].snagaMotora = 245;
-	strcpy(automobili[50].vrstaGoriva, "Benzin");
-	strcpy(automobili[51].marka, "Smart");
-	automobili[51].stanje = 12;
-	automobili[51].cijena = 13930;
-	automobili[51].kilometraza = 52001;
-	strcpy(automobili[51].boja, "Narancasta");
-	automobili[51].snagaMotora = 90;
-	strcpy(automobili[51].vrstaGoriva, "Struja");
-	strcpy(automobili[52].marka, "Subaru");
-	automobili[52].stanje = 20;
-	automobili[52].cijena = 19990;
-	automobili[52].kilometraza = 87900;
-	strcpy(automobili[52].boja, "Crvena");
-	automobili[52].snagaMotora = 175;
-	strcpy(automobili[52].vrstaGoriva, "Benzin");
-	strcpy(automobili[53].marka, "Suzuki");
-	automobili[53].stanje = 30;
-	automobili[53].cijena = 29485;
-	automobili[53].kilometraza = 5;
-	strcpy(automobili[53].boja, "Crna");
-	automobili[53].snagaMotora = 129;
-	strcpy(automobili[53].vrstaGoriva, "Hybrid");
-	strcpy(automobili[54].marka, "Tesla");
-	automobili[54].stanje = 2;
-	automobili[54].cijena = 45950;
-	automobili[54].kilometraza = 138000;
-	strcpy(automobili[54].boja, "Crna");
-	automobili[54].snagaMotora = 421;
-	strcpy(automobili[54].vrstaGoriva, "Struja");
-	strcpy(automobili[55].marka, "Toyota");
-	automobili[55].stanje = 28;
-	automobili[55].cijena = 24990;
-	automobili[55].kilometraza = 17700;
-	strcpy(automobili[55].boja, "Zelena");
-	automobili[55].snagaMotora = 179;
-	strcpy(automobili[55].vrstaGoriva, "Hybrid");
-	strcpy(automobili[56].marka, "Trabant");
-	automobili[56].stanje = 1;
-	automobili[56].cijena = 5888;
-	automobili[56].kilometraza = 15562;
-	strcpy(automobili[56].boja, "Zuta");
-	automobili[56].snagaMotora = 26;
-	strcpy(automobili[56].vrstaGoriva, "Benzin");
-	strcpy(automobili[57].marka, "Volkswagen");
-	automobili[57].stanje = 46;
-	automobili[57].cijena = 53350;
-	automobili[57].kilometraza = 11;
-	strcpy(automobili[57].boja, "Zlatna");
-	automobili[57].snagaMotora = 239;
-	strcpy(automobili[57].vrstaGoriva, "Diesel");
-	strcpy(automobili[58].marka, "Wartburg");
-	automobili[58].stanje = 1;
-	automobili[58].cijena = 6299;
-	automobili[58].kilometraza = 72610;
-	strcpy(automobili[58].boja, "Crvena/bijela");
-	automobili[58].snagaMotora = 45;
-	strcpy(automobili[58].vrstaGoriva, "Benzin");
-	strcpy(automobili[59].marka, "WEY");
-	automobili[59].stanje = 3;
-	automobili[59].cijena = 35090;
-	automobili[59].kilometraza = 173;
-	strcpy(automobili[59].boja, "Crvena");
-	automobili[59].snagaMotora = 234;
-	strcpy(automobili[59].vrstaGoriva, "Benzin");
+    do {
+        printf("\nOdaberite opciju:\n");
+        printf("1. Pregled automobila\n");
+        printf("2. Pregled motocikala\n");
+        printf("3. Napusti auto kuću\n");
+        printf("Vaš odabir: ");
+        scanf("%d", &opcija);
 
-	int odabranaOpcija;
-	int brojAutomobila = 60;  // Number of initialized cars for demonstration purposes
+        switch (opcija) {
+        case 1:
+        {
+            int podopcija;
 
-	do {
-		printf("\nOpcije:\n");
-		printf("1. Lista automobila\n");
-		printf("2. Trazi vozilo\n");
-		printf("3. Filter\n");
-		printf("0. Izlaz\n");
-		printf("Odaberite opciju: ");
-		scanf("%d", &odabranaOpcija);
+            do {
+                printf("\nOdaberite opciju:\n");
+                printf("1. Prikazi listu automobila\n");
+                printf("2. Trazi automobil\n");
+                printf("3. Natrag\n");
+                printf("Vaš odabir: ");
+                scanf("%d", &podopcija);
 
-		switch (odabranaOpcija) {
-		case 1:
-			listaAutomobila(automobili, brojAutomobila);
-			break;
-		case 2:
-		{
-			char trazenaMarka[50];
-			printf("Unesite ime vozila: ");
-			scanf("%s", trazenaMarka);
-			traziVozilo(automobili, brojAutomobila, trazenaMarka);
-			printf("Unesite ime automobila koji zelite kupiti (0 za odustajanje): ");
-			char kupnjaMarka[50];
-			scanf("%s", kupnjaMarka);
-			if (strcmp(kupnjaMarka, "0") != 0) {
-				kupiAutomobil(automobili, brojAutomobila, kupnjaMarka);
-			}
-		}
-		break;
-		case 3:
-		{
-			int opcija, vrijednost;
-			printf("Odaberite opciju (1-Cijena, 2-Kilometraza): ");
-			scanf("%d", &opcija);
-			printf("Unesite vrijednost: ");
-			scanf("%d", &vrijednost);
-			filter(automobili, brojAutomobila, opcija, vrijednost);
-			printf("Unesite ime automobila koji zelite kupiti (0 za odustajanje): ");
-			char kupnjaMarka[50];
-			scanf("%s", kupnjaMarka);
-			if (strcmp(kupnjaMarka, "0") != 0) {
-				kupiAutomobil(automobili, brojAutomobila, kupnjaMarka);
-			}
-		}
-		break;
-		case 0:
-			printf("Hvala na koristenju programa!\n");
-			break;
-		default:
-			printf("Pogresan odabir opcije\n");
-			break;
-		}
-	} while (odabranaOpcija != 0);
+                switch (podopcija) {
+                case 1:
+                    prikaziListuAutomobila();
+                    break;
+                case 2:
+                    traziAutomobil();
+                    break;
+                case 3:
+                    break;
+                default:
+                    printf("\nNepostojeća opcija. Molimo odaberite ponovno.\n");
+                    break;
+                }
+            } while (podopcija != 3);
+        }
+        break;
+        case 2:
+        {
+            int podopcija;
 
-	return 0;
+            do {
+                printf("\nOdaberite opciju:\n");
+                printf("1. Prikazi listu motocikala\n");
+                printf("2. Trazi motocikl\n");
+                printf("3. Natrag\n");
+                printf("Vaš odabir: ");
+                scanf("%d", &podopcija);
+
+                switch (podopcija) {
+                case 1:
+                    prikaziListuMotocikala();
+                    break;
+                case 2:
+                    traziMotocikl();
+                    break;
+                case 3:
+                    break;
+                default:
+                    printf("\nNepostojeća opcija. Molimo odaberite ponovno.\n");
+                    break;
+                }
+            } while (podopcija != 3);
+        }
+        break;
+        case 3:
+            printf("\nPozdrav!\n");
+            return 0;
+        default:
+            printf("\nNepostojeća opcija. Molimo odaberite ponovno.\n");
+            break;
+        }
+    } while (opcija != 3);
+
+    return 0;
 }
-
-
-
-
 
 
 

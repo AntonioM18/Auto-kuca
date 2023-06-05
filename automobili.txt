@@ -1,0 +1,33 @@
+Naziv                Cijena   Kilometraza   Vrsta goriva   Boja
+--------------------------------------------------------------
+Toyota Camry         50000    20000         Benzinski      Crvena
+BMW X5               70000    15000         Dizel          Plava
+Honda Civic          35000    50000         Benzinski      Siva
+Tesla Model 3        60000    30000         Elektricni     Bijela
+Ford Mustang         45000    40000         Hibridni       Crna
+Nissan Altima        40000    45000         Benzinski      Srebrna
+Chevrolet Malibu     38000    35000         Dizel          Crvena
+Audi A4              55000    25000         Benzinski      Plava
+Mercedes-Benz C-Class60000    28000         Dizel          Crna
+Volkswagen Golf      30000    60000         Elektricni     Bijela
+Hyundai Elantra      32000    45000         Benzinski      Siva
+Kia Optima           38000    40000         Hibridni       Crna
+Lexus ES             55000    35000         Benzinski      Crvena
+Mazda 3              28000    55000         Dizel          Plava
+Subaru Impreza       32000    38000         Benzinski      Srebrna
+Ford Focus           25000    60000         Elektricni     Crna
+Chevrolet Cruze      35000    45000         Benzinski      Plava
+Toyota Corolla       30000    50000         Hibridni       Siva
+BMW 3 Series         60000    20000         Dizel          Crvena
+Honda Accord         45000    30000         Benzinski      Bijela
+Tesla Model S        80000    10000         Elektricni     Crna
+Ford Fusion          38000    40000         Hibridni       Plava
+Nissan Sentra        32000    45000         Benzinski      Siva
+Audi A6              65000    25000         Dizel          Srebrna
+Mercedes-Benz E-Class70000    28000         Benzinski      Crvena
+Volkswagen Passat    35000    60000         Dizel          Bijela
+Hyundai Sonata       30000    45000         Benzinski      Crna
+Kia Stinger          50000    40000         Elektricni     Plava
+Lexus GS             55000    35000         Hibridni       Siva
+Mazda 6              32000    55000         Benzinski      Crvena
+

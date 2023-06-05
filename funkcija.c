@@ -1,107 +1,124 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <string.h>
-#include "header.h"
-#include "funkcija.h"
+#include "main.h"
 
+void prikaziListuAutomobila() {
+    FILE* datoteka;
+    char red[100];
 
+    datoteka = fopen("automobili.txt", "r");
 
-void listaAutomobila(const Automobil automobili[], int brojAutomobila) {
-	if (brojAutomobila <= 0) {
-		printf("Nema dostupnih automobila.\n");
-		return;
-	}
+    if (datoteka == NULL) {
+        printf("Greška pri otvaranju datoteke.\n");
+        return;
+    }
 
-	printf("Dostupne marke automobila:\n");
-	for (int i = 0; i < brojAutomobila; i++) {
-		printf("%d. %s\n", i + 1, automobili[i].marka);
-	}
+    while (fgets(red, sizeof(red), datoteka) != NULL) {
+        printf("%s", red);
+    }
+
+    fclose(datoteka);
 }
 
-void traziVozilo(const Automobil automobili[], int brojAutomobila, const char trazenaMarka[]) {
-	if (brojAutomobila <= 0) {
-		printf("Nema dostupnih automobila.\n");
-		return;
-	}
+void traziAutomobil() {
+    int opcija;
 
-	printf("Rezultati pretrage:\n");
-	int found = 0;
-	for (int i = 0; i < brojAutomobila; i++) {
-		if (strcmp(automobili[i].marka, trazenaMarka) == 0) {
-			found = 1;
-			printf("%s - Stanje: %d, Cijena: %d EUR, Kilometraza: %d km, Boja: %s\n",
-				automobili[i].marka, automobili[i].stanje, automobili[i].cijena, automobili[i].kilometraza, automobili[i].boja);
-		}
-	}
+    do {
+        printf("\nOdaberite opciju:\n");
+        printf("1. Ime automobila\n");
+        printf("2. Cijena\n");
+        printf("3. Kilometraza\n");
+        printf("4. Gorivo\n");
+        printf("5. Natrag\n");
+        printf("Vaš odabir: ");
+        scanf("%d", &opcija);
 
-	if (!found) {
-		printf("Nije pronaden automobil s markom '%s'.\n", trazenaMarka);
-	}
+        switch (opcija) {
+        case 1:
+            pretraziAutomobilePoImenu();
+            break;
+        case 2:
+        {
+            int cijena;
+            printf("\nUnesite cijenu: ");
+            scanf("%d", &cijena);
+            pretraziAutomobilePoCijeni(cijena);
+        }
+        break;
+        case 3:
+        {
+            int kilometraza;
+            printf("\nUnesite kilometražu: ");
+            scanf("%d", &kilometraza);
+            pretraziAutomobilePoKilometrazi(kilometraza);
+        }
+        break;
+        case 4:
+            pretraziAutomobilePoGorivu();
+            break;
+        case 5:
+            break;
+        default:
+            printf("\nNepostojeća opcija. Molimo odaberite ponovno.\n");
+            break;
+        }
+    } while (opcija != 5);
 }
 
-void filter(const Automobil automobili[], int brojAutomobila, int opcija, int vrijednost) {
-	if (brojAutomobila <= 0) {
-		printf("Nema dostupnih automobila.\n");
-		return;
-	}
+void prikaziListuMotocikala() {
+    FILE* datoteka;
+    char red[100];
 
-	printf("Filtrirani rezultati:\n");
-	int found = 0;
-	for (int i = 0; i < brojAutomobila; i++) {
-		int zadovoljavaFilter = 0;
+    datoteka = fopen("motocikli.txt", "r");
 
-		switch (opcija) {
-		case 1:  // Cijena
-			if (automobili[i].cijena <= vrijednost) {
-				zadovoljavaFilter = 1;
-			}
-			break;
-		case 2:  // Kilometraža
-			if (automobili[i].kilometraza <= vrijednost) {
-				zadovoljavaFilter = 1;
-			}
-			break;
-		default:
-			printf("Pogresna opcija filtera.\n");
-			return;
-		}
+    if (datoteka == NULL) {
+        printf("Greška pri otvaranju datoteke.\n");
+        return;
+    }
 
-		if (zadovoljavaFilter) {
-			found = 1;
-			printf("%s - Stanje: %d, Cijena: %d EUR, Kilometraza: %d km, Boja: %s\n",
-				automobili[i].marka, automobili[i].stanje, automobili[i].cijena, automobili[i].kilometraza, automobili[i].boja);
-		}
-	}
+    while (fgets(red, sizeof(red), datoteka) != NULL) {
+        printf("%s", red);
+    }
 
-	if (!found) {
-		printf("Nema automobila koji zadovoljavaju zadani filter.\n");
-	}
+    fclose(datoteka);
 }
 
-void kupiAutomobil(Automobil automobili[], int brojAutomobila, const char kupnjaMarka[]) {
-	if (brojAutomobila <= 0) {
-		printf("Nema dostupnih automobila.\n");
-		return;
-	}
+void traziMotocikl() {
+    int opcija;
 
-	for (int i = 0; i < brojAutomobila; i++) {
-		if (strcmp(automobili[i].marka, kupnjaMarka) == 0) {
-			printf("Hvala na kupnji naseg vozila!\n");
-			automobili[i].stanje -= 1;
-			automobili[i].cijena += 500;
-			automobili[i].kilometraza -= 10000;
-			strcpy(automobili[i].boja, "Nova Boja");
-			// Code to remove the car from the list if desired
-			return;
-		}
-	}
-	printf("Automobil '%s' nije pronaden.\n", kupnjaMarka);
-}
+    do {
+        printf("\nOdaberite opciju:\n");
+        printf("1. Ime motocikla\n");
+        printf("2. Cijena\n");
+        printf("3. Kilometraza\n");
+        printf("4. Natrag\n");
+        printf("Vaš odabir: ");
+        scanf("%d", &opcija);
 
-
-void oslobodiMemoriju(Automobil* automobili, int brojAutomobila) {
-	for (int i = 0; i < brojAutomobila; i++) {
-		free(automobili[i].marka);
-		free(automobili[i].boja);
-	}
+        switch (opcija) {
+        case 1:
+            pretraziMotociklePoImenu();
+            break;
+        case 2:
+        {
+            char cijena[100];
+            printf("\nUnesite cijenu: ");
+            scanf("%s", cijena);
+            pretraziMotociklePoCijeni(cijena);
+        }
+        break;
+        case 3:
+        {
+            char kilometraza[100];
+            printf("\nUnesite kilometražu: ");
+            scanf("%s", kilometraza);
+            pretraziMotociklePoKilometrazi(kilometraza);
+        }
+        break;
+        case 4:
+            break;
+        default:
+            printf("\nNepostojeća opcija. Molimo odaberite ponovno.\n");
+            break;
+        }
+    } while (opcija != 4);
 }
